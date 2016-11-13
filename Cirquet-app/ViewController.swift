@@ -8,13 +8,18 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, GIDSignInUIDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        GIDSignIn.sharedInstance().uiDelegate = self
     }
-
+    func signIn(signIn: GIDSignIn!, presentViewController viewController: UIViewController!) {
+        self.present(viewController, animated: true, completion: nil)
+    }
+    func signIn(signIn: GIDSignIn!, dismissViewController viewController: UIViewController!) {
+        self.dismiss(animated: true, completion: nil)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

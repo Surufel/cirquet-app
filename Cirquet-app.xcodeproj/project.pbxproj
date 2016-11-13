@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14AE29D347243D9CA39BD31E /* Pods_Cirquet_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71AD04310E4A8384D64EE3C0 /* Pods_Cirquet_app.framework */; };
+		4514DF931DD90C540053E2EF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4514DF921DD90C540053E2EF /* GoogleService-Info.plist */; };
 		45C77F9C1DD8FA7400395F5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C77F9B1DD8FA7400395F5D /* AppDelegate.swift */; };
 		45C77F9E1DD8FA7400395F5D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C77F9D1DD8FA7400395F5D /* ViewController.swift */; };
 		45C77FA11DD8FA7400395F5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45C77F9F1DD8FA7400395F5D /* Main.storyboard */; };
@@ -15,6 +17,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C2A2D8854BA811DFD9FFCEC /* Pods-Cirquet-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cirquet-app.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cirquet-app/Pods-Cirquet-app.release.xcconfig"; sourceTree = "<group>"; };
+		4282381420F729400C58D0DD /* Pods-Cirquet-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cirquet-app.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cirquet-app/Pods-Cirquet-app.debug.xcconfig"; sourceTree = "<group>"; };
+		4514DF921DD90C540053E2EF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4514DF951DD90D3E0053E2EF /* Cirquet-app-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cirquet-app-Bridging-Header.h"; sourceTree = "<group>"; };
 		45C77F981DD8FA7400395F5D /* Cirquet-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cirquet-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45C77F9B1DD8FA7400395F5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45C77F9D1DD8FA7400395F5D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +28,7 @@
 		45C77FA21DD8FA7400395F5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45C77FA51DD8FA7400395F5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		45C77FA71DD8FA7400395F5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71AD04310E4A8384D64EE3C0 /* Pods_Cirquet_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cirquet_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +36,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14AE29D347243D9CA39BD31E /* Pods_Cirquet_app.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A61A3E15FFB4116350D61FF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				71AD04310E4A8384D64EE3C0 /* Pods_Cirquet_app.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		45C77F8F1DD8FA7400395F5D = {
 			isa = PBXGroup;
 			children = (
+				4514DF921DD90C540053E2EF /* GoogleService-Info.plist */,
 				45C77F9A1DD8FA7400395F5D /* Cirquet-app */,
 				45C77F991DD8FA7400395F5D /* Products */,
+				484448FB409DF4FD3A6F0B3B /* Pods */,
+				2A61A3E15FFB4116350D61FF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,8 +79,18 @@
 				45C77FA21DD8FA7400395F5D /* Assets.xcassets */,
 				45C77FA41DD8FA7400395F5D /* LaunchScreen.storyboard */,
 				45C77FA71DD8FA7400395F5D /* Info.plist */,
+				4514DF951DD90D3E0053E2EF /* Cirquet-app-Bridging-Header.h */,
 			);
 			path = "Cirquet-app";
+			sourceTree = "<group>";
+		};
+		484448FB409DF4FD3A6F0B3B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4282381420F729400C58D0DD /* Pods-Cirquet-app.debug.xcconfig */,
+				1C2A2D8854BA811DFD9FFCEC /* Pods-Cirquet-app.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +100,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 45C77FAA1DD8FA7400395F5D /* Build configuration list for PBXNativeTarget "Cirquet-app" */;
 			buildPhases = (
+				694E2C9914BE2A17911CE601 /* [CP] Check Pods Manifest.lock */,
 				45C77F941DD8FA7400395F5D /* Sources */,
 				45C77F951DD8FA7400395F5D /* Frameworks */,
 				45C77F961DD8FA7400395F5D /* Resources */,
+				56CEF1A1E4FDEB1F591E559E /* [CP] Embed Pods Frameworks */,
+				0FCAB14575F547E7FB2D2061 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -97,6 +129,7 @@
 					45C77F971DD8FA7400395F5D = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 8G84VBBLHA;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -125,12 +158,61 @@
 			buildActionMask = 2147483647;
 			files = (
 				45C77FA61DD8FA7400395F5D /* LaunchScreen.storyboard in Resources */,
+				4514DF931DD90C540053E2EF /* GoogleService-Info.plist in Resources */,
 				45C77FA31DD8FA7400395F5D /* Assets.xcassets in Resources */,
 				45C77FA11DD8FA7400395F5D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0FCAB14575F547E7FB2D2061 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cirquet-app/Pods-Cirquet-app-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		56CEF1A1E4FDEB1F591E559E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cirquet-app/Pods-Cirquet-app-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		694E2C9914BE2A17911CE601 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		45C77F941DD8FA7400395F5D /* Sources */ = {
@@ -257,26 +339,33 @@
 		};
 		45C77FAB1DD8FA7400395F5D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4282381420F729400C58D0DD /* Pods-Cirquet-app.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 8G84VBBLHA;
 				INFOPLIST_FILE = "Cirquet-app/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "kurtbitner.Cirquet-app";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kurtbitner.cirquet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Cirquet-app/Cirquet-app-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		45C77FAC1DD8FA7400395F5D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C2A2D8854BA811DFD9FFCEC /* Pods-Cirquet-app.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 8G84VBBLHA;
 				INFOPLIST_FILE = "Cirquet-app/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "kurtbitner.Cirquet-app";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kurtbitner.cirquet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Cirquet-app/Cirquet-app-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -300,6 +389,7 @@
 				45C77FAC1DD8FA7400395F5D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
