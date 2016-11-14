@@ -9,10 +9,13 @@
 import UIKit
 
 class ViewController: UIViewController, GIDSignInUIDelegate {
+    @IBOutlet weak var myLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         GIDSignIn.sharedInstance().uiDelegate = self
+        self.myLabel.text = "Label"
+       
     }
     func signIn(signIn: GIDSignIn!, presentViewController viewController: UIViewController!) {
         self.present(viewController, animated: true, completion: nil)

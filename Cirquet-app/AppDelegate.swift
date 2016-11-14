@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import Just
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
     var window: UIWindow?
-
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -28,13 +29,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if (error == nil) {
+            let vc = self.window?.rootViewController as! ViewController
             let userID = user.userID
             let idToken = user.authentication.idToken
             let fullName = user.profile.name
             let givenName = user.profile.givenName
             let familyName = user.profile.familyName
             let email = user.profile.email
+            let r = Just.post(
+                "http://128.238.64.105:8080/register",
+                data: ["idToken": idToken!, "fullName": fullName!, "email": email!]
+            )
+            //print(r.statusCode)
+            if(r.ok) {
+                print(r.text);
+                vc.myLabel.text = r.text!
+            }
+            
+            
         }
+        
         else {
             print("\(error.localizedDescription)")
         }
