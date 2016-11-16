@@ -9,12 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController, GIDSignInUIDelegate {
-    @IBOutlet weak var myLabel: UILabel!
+    @IBOutlet weak var myText: UITextView!
+    
 
     override func viewDidLoad() {
+       
         super.viewDidLoad()
         GIDSignIn.sharedInstance().uiDelegate = self
-        self.myLabel.text = "Label"
+        self.myText.text = "Label"
        
     }
     func signIn(signIn: GIDSignIn!, presentViewController viewController: UIViewController!) {
