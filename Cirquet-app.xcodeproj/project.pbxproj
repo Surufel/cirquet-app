@@ -14,6 +14,7 @@
 		45C77FA11DD8FA7400395F5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45C77F9F1DD8FA7400395F5D /* Main.storyboard */; };
 		45C77FA31DD8FA7400395F5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45C77FA21DD8FA7400395F5D /* Assets.xcassets */; };
 		45C77FA61DD8FA7400395F5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45C77FA41DD8FA7400395F5D /* LaunchScreen.storyboard */; };
+		45D0E46D1DDE22220012239E /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D0E46C1DDE22220012239E /* ChatViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		45C77FA21DD8FA7400395F5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45C77FA51DD8FA7400395F5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		45C77FA71DD8FA7400395F5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45D0E46C1DDE22220012239E /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		71AD04310E4A8384D64EE3C0 /* Pods_Cirquet_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cirquet_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -80,6 +82,7 @@
 				45C77FA41DD8FA7400395F5D /* LaunchScreen.storyboard */,
 				45C77FA71DD8FA7400395F5D /* Info.plist */,
 				4514DF951DD90D3E0053E2EF /* Cirquet-app-Bridging-Header.h */,
+				45D0E46C1DDE22220012239E /* ChatViewController.swift */,
 			);
 			path = "Cirquet-app";
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45C77F9E1DD8FA7400395F5D /* ViewController.swift in Sources */,
+				45D0E46D1DDE22220012239E /* ChatViewController.swift in Sources */,
 				45C77F9C1DD8FA7400395F5D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

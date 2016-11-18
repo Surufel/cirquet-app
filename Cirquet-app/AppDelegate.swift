@@ -11,6 +11,8 @@ import Just
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     var window: UIWindow?
+    var ok: Bool = false
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         var configureError: NSError?;
@@ -24,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     }
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if (error == nil) {
-            let vc = self.window?.rootViewController as! ViewController
+            var vc = self.window?.rootViewController as! ViewController
             let userID = user.userID
             let idToken = user.authentication.idToken
             let fullName = user.profile.name
@@ -34,20 +36,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             //vc.myLabel.text = email!
             
             let r = Just.post(
-                "http://0.0.0.0:8080/register",
+                "http://128.238.64.105:8080/register",
                 data: ["fname": givenName!, "lname": familyName!, "email": email!, "age": 21, "host": "false", "googleid": idToken! ]
             )
             if(r.ok) {
+                ok = r.ok
                 print(r.text);
-                vc.myText.text = r.text!
+                //vc.myText.text = r.text!
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "chatviewcontroller")
+                window?.rootViewController?.present(vc, animated: true, completion: nil)
             }
             else {
                 print (r.statusCode)
             }
+            
+            
         }
         else {
             print("\(error.localizedDescription)")
         }
+        
     }
     func sign( signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
         //
