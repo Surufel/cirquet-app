@@ -1,0 +1,6 @@
+framework module Pods_Cirquet_app {
+  umbrella header "Pods-Cirquet-app-umbrella.h"
+
+  export *
+  module * { export * }
+}

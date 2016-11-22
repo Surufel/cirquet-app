@@ -1,0 +1,751 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1A6E4219AC28839EE52ECBFEA10D794F /* WebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE15F26AFB5BB5E91F3468F035DB8AF /* WebSocket.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		36DFEA1DBA695026C68804892AEBC1F0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		580A5E0620B0603B0D9D1E8C65DC4389 /* SSLSecurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC262D6B796A791FF1BEF928181BCE34 /* SSLSecurity.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B28F5D5C930AD8EB6FC30254DDF0B947 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		B87D388B67D0A4D539799BDC53BA943C /* Pods-Cirquet-app-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6ECCDC2F880B8210B95906BD419FAD7E /* Pods-Cirquet-app-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D9652D2952012C4282A3ABD1C2C06351 /* Starscream-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F215EA79B4027BD21F38BC200ADA986D /* Starscream-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DAC60EEE0F0AE433AC9D9FDEAABED2EB /* Starscream-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FE6EDB6D7A033D32BBC0CB61F28519 /* Starscream-dummy.m */; };
+		E203D0DA6F70E39B1E3EB389CBD52098 /* Pods-Cirquet-app-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 81560C2A4512FDC536D257FB9D8176EB /* Pods-Cirquet-app-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4309A59AEE8BA9F65266926666A33CBC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1DA9AB8AE7F901A22A3771245DBA5756;
+			remoteInfo = Starscream;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		05FF1F871412C288AC6C30AD0835611E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		062D00A3E03AB8C09803378EC7B2C9DA /* Core.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Core.h; path = Headers/Core.h; sourceTree = "<group>"; };
+		12250AC906BA1569AEF19825075B6EC5 /* Pods-Cirquet-app-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Cirquet-app-acknowledgements.plist"; sourceTree = "<group>"; };
+		1522039C5F11878F0697D9A795019206 /* GoogleSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSignIn.framework; path = Frameworks/GoogleSignIn.framework; sourceTree = "<group>"; };
+		20686D138E88D4A8691C697D5249E1B8 /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSymbolUtilities.framework; path = Frameworks/GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
+		2FE15F26AFB5BB5E91F3468F035DB8AF /* WebSocket.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WebSocket.swift; path = Source/WebSocket.swift; sourceTree = "<group>"; };
+		30E905B52F9EEF4F984F7E80EAEF2B8D /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
+		38199011B3FB606E17CD76FEF809E4E5 /* Pods_Cirquet_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cirquet_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		48CAC1DA1B341F208A31957A497AD135 /* Pods-Cirquet-app-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Cirquet-app-frameworks.sh"; sourceTree = "<group>"; };
+		4CDD3716B08F072935BE59F38822F7FC /* GoogleAuthUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleAuthUtilities.framework; path = Frameworks/GoogleAuthUtilities.framework; sourceTree = "<group>"; };
+		55FE6EDB6D7A033D32BBC0CB61F28519 /* Starscream-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Starscream-dummy.m"; sourceTree = "<group>"; };
+		5D15E0E0C8ACFBD97E5D827C8CDA7D56 /* Starscream.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Starscream.modulemap; sourceTree = "<group>"; };
+		5DEB61EC1548BAB5793BAE7E9C54DB9E /* Pods-Cirquet-app.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Cirquet-app.modulemap"; sourceTree = "<group>"; };
+		5ED4402C74BB1927D08A8725B1839FC8 /* GoogleAppUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleAppUtilities.framework; path = Frameworks/GoogleAppUtilities.framework; sourceTree = "<group>"; };
+		6348CC08E75295A320B287CF66474EAD /* SignIn-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SignIn-Module.h"; path = "Headers/ModuleHeaders/SignIn-Module.h"; sourceTree = "<group>"; };
+		6ECCDC2F880B8210B95906BD419FAD7E /* Pods-Cirquet-app-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Cirquet-app-umbrella.h"; sourceTree = "<group>"; };
+		7C2F62B31519DB9D166012D4D92F5A67 /* Pods-Cirquet-app-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Cirquet-app-resources.sh"; sourceTree = "<group>"; };
+		7DAC898CAA25517CAB633192BAFD7844 /* Starscream.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Starscream.xcconfig; sourceTree = "<group>"; };
+		7E965D311AEDB94045F7CFFCE8063395 /* GGLCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GGLCore.framework; path = Frameworks/GGLCore.framework; sourceTree = "<group>"; };
+		811D4984CEDE9CB0535735740AB1B220 /* Pods-Cirquet-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Cirquet-app.release.xcconfig"; sourceTree = "<group>"; };
+		81560C2A4512FDC536D257FB9D8176EB /* Pods-Cirquet-app-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Cirquet-app-dummy.m"; sourceTree = "<group>"; };
+		819A01BF2CD208B3664EE99A491CDD37 /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A912337CF0ADDA1C6A1BD691F0096C4 /* Pods-Cirquet-app-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Cirquet-app-acknowledgements.markdown"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A7170BA90EA24CD2C6C89F9D791E8741 /* GoogleNetworkingUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleNetworkingUtilities.framework; path = Frameworks/GoogleNetworkingUtilities.framework; sourceTree = "<group>"; };
+		B185AD1D349C3C25A6FF4DFD25C7FC7A /* SignIn.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SignIn.h; path = Headers/SignIn.h; sourceTree = "<group>"; };
+		B3A7957D9066B6718D4FDC73D4CC9B35 /* GoogleSignIn.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleSignIn.bundle; path = Resources/GoogleSignIn.bundle; sourceTree = "<group>"; };
+		B548E272FAF2599A78FECE9379EBD76E /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleInterchangeUtilities.framework; path = Frameworks/GoogleInterchangeUtilities.framework; sourceTree = "<group>"; };
+		B863477559A6E720CBE765ACC9999D8F /* Starscream-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Starscream-prefix.pch"; sourceTree = "<group>"; };
+		CC262D6B796A791FF1BEF928181BCE34 /* SSLSecurity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SSLSecurity.swift; path = Source/SSLSecurity.swift; sourceTree = "<group>"; };
+		CD2D211BCE95DEBAEFB0D487853FF6A9 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		E2A9D3BF9F76EFD01B26F5EE0167ED30 /* FIRInstanceID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceID.h; path = Sources/FIRInstanceID.h; sourceTree = "<group>"; };
+		E39E62B8B5EBCFAC71A4ABF4E0B61033 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED055B621D074BADAB5D3561A0A50C08 /* Core-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Core-Module.h"; path = "Headers/ModuleHeaders/Core-Module.h"; sourceTree = "<group>"; };
+		F0EF820213EE9CA149ABFC3820B54E53 /* Analytics-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Analytics-Module.h"; path = "Headers/ModuleHeaders/Analytics-Module.h"; sourceTree = "<group>"; };
+		F12975E81FFC4D6F91E57BFBC516F867 /* GGLSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GGLSignIn.framework; path = Frameworks/GGLSignIn.framework; sourceTree = "<group>"; };
+		F215EA79B4027BD21F38BC200ADA986D /* Starscream-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Starscream-umbrella.h"; sourceTree = "<group>"; };
+		F862776623FEA34A72885CCCFDAC7EB7 /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Frameworks/GoogleUtilities.framework; sourceTree = "<group>"; };
+		F9BCC74A1EADA2E9B3AC739B9DB27FE5 /* Pods-Cirquet-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Cirquet-app.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AD074D8AF2C3BCB3F9849CF0D5EA6E99 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36DFEA1DBA695026C68804892AEBC1F0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0476C2EA29D3A27643ED21824D71F2F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B28F5D5C930AD8EB6FC30254DDF0B947 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		047AF4327BFC46050C51F3C0E809C75D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B3A7957D9066B6718D4FDC73D4CC9B35 /* GoogleSignIn.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		0C373041BFE2C66FA3B5E6EE522E08DA /* FirebaseAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				EF8C1D7CB71FF1B6635F684900D09F19 /* Frameworks */,
+			);
+			path = FirebaseAnalytics;
+			sourceTree = "<group>";
+		};
+		0CEBC3D8FCE86E9E8D58EA8DB3B21511 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				B185AD1D349C3C25A6FF4DFD25C7FC7A /* SignIn.h */,
+				DECAC438BF0387C3994CBCA46E70E956 /* Frameworks */,
+			);
+			name = SignIn;
+			sourceTree = "<group>";
+		};
+		139D41C3479DE6B1F4AB012C2A9D9146 /* GoogleNetworkingUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				3AEC75777D3EA74BCF32FAA5C6BD02FF /* Frameworks */,
+			);
+			path = GoogleNetworkingUtilities;
+			sourceTree = "<group>";
+		};
+		1EEB239B395A9732FC0766CE72A98879 /* GoogleUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				A0DE95B740D6371864B9681C5583AA7D /* Frameworks */,
+			);
+			path = GoogleUtilities;
+			sourceTree = "<group>";
+		};
+		2881B58E1766D1F4A5AEABE2A9A6488E /* GoogleAppUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				C75736415436825DA5449F9A475F7546 /* Frameworks */,
+			);
+			path = GoogleAppUtilities;
+			sourceTree = "<group>";
+		};
+		36AC70C19F96381B9333B9AAE57E9B84 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				38199011B3FB606E17CD76FEF809E4E5 /* Pods_Cirquet_app.framework */,
+				819A01BF2CD208B3664EE99A491CDD37 /* Starscream.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3AEC75777D3EA74BCF32FAA5C6BD02FF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A7170BA90EA24CD2C6C89F9D791E8741 /* GoogleNetworkingUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		3EA3079E6454430940E0837D884F2CFB /* Google */ = {
+			isa = PBXGroup;
+			children = (
+				9B60B819B8C07013042B8236D3253664 /* Core */,
+				0CEBC3D8FCE86E9E8D58EA8DB3B21511 /* SignIn */,
+			);
+			path = Google;
+			sourceTree = "<group>";
+		};
+		4FCB0BC89D54A127986F978D58A9EFB5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4CDD3716B08F072935BE59F38822F7FC /* GoogleAuthUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5B6BC1F6965E842455733073A04711EF /* GoogleSymbolUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				F6E6E2AFFE2C7A5A49444D720C13629B /* Frameworks */,
+			);
+			path = GoogleSymbolUtilities;
+			sourceTree = "<group>";
+		};
+		5C22EDC206B35F772D9A449034737AC3 /* GoogleInterchangeUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				826A5BD0925401C66BD70AA16FB973F7 /* Frameworks */,
+			);
+			path = GoogleInterchangeUtilities;
+			sourceTree = "<group>";
+		};
+		5DE6AE302DA80E83AD5A14899573DC40 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				916DE5B2E0EB17EBE6166283AC558ACF /* Pods-Cirquet-app */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		61145440BA89E404771D511F4088CE75 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				05FF1F871412C288AC6C30AD0835611E /* Info.plist */,
+				5D15E0E0C8ACFBD97E5D827C8CDA7D56 /* Starscream.modulemap */,
+				7DAC898CAA25517CAB633192BAFD7844 /* Starscream.xcconfig */,
+				55FE6EDB6D7A033D32BBC0CB61F28519 /* Starscream-dummy.m */,
+				B863477559A6E720CBE765ACC9999D8F /* Starscream-prefix.pch */,
+				F215EA79B4027BD21F38BC200ADA986D /* Starscream-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Starscream";
+			sourceTree = "<group>";
+		};
+		68D70207B1B559A54A719C4B7C2D65C6 /* GoogleAuthUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				4FCB0BC89D54A127986F978D58A9EFB5 /* Frameworks */,
+			);
+			path = GoogleAuthUtilities;
+			sourceTree = "<group>";
+		};
+		71C5131A3443207D647B76798BA1C70B /* Starscream */ = {
+			isa = PBXGroup;
+			children = (
+				CC262D6B796A791FF1BEF928181BCE34 /* SSLSecurity.swift */,
+				2FE15F26AFB5BB5E91F3468F035DB8AF /* WebSocket.swift */,
+				61145440BA89E404771D511F4088CE75 /* Support Files */,
+			);
+			path = Starscream;
+			sourceTree = "<group>";
+		};
+		77FE80A10F6E17B8981966C4062359B5 /* GoogleSignIn */ = {
+			isa = PBXGroup;
+			children = (
+				B35D7710D4699F6CEF762304FD833111 /* Frameworks */,
+				047AF4327BFC46050C51F3C0E809C75D /* Resources */,
+			);
+			path = GoogleSignIn;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				F0983B8CC3A1AD3A117220FA59141DED /* Pods */,
+				36AC70C19F96381B9333B9AAE57E9B84 /* Products */,
+				5DE6AE302DA80E83AD5A14899573DC40 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		826A5BD0925401C66BD70AA16FB973F7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B548E272FAF2599A78FECE9379EBD76E /* GoogleInterchangeUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		916DE5B2E0EB17EBE6166283AC558ACF /* Pods-Cirquet-app */ = {
+			isa = PBXGroup;
+			children = (
+				E39E62B8B5EBCFAC71A4ABF4E0B61033 /* Info.plist */,
+				5DEB61EC1548BAB5793BAE7E9C54DB9E /* Pods-Cirquet-app.modulemap */,
+				8A912337CF0ADDA1C6A1BD691F0096C4 /* Pods-Cirquet-app-acknowledgements.markdown */,
+				12250AC906BA1569AEF19825075B6EC5 /* Pods-Cirquet-app-acknowledgements.plist */,
+				81560C2A4512FDC536D257FB9D8176EB /* Pods-Cirquet-app-dummy.m */,
+				48CAC1DA1B341F208A31957A497AD135 /* Pods-Cirquet-app-frameworks.sh */,
+				7C2F62B31519DB9D166012D4D92F5A67 /* Pods-Cirquet-app-resources.sh */,
+				6ECCDC2F880B8210B95906BD419FAD7E /* Pods-Cirquet-app-umbrella.h */,
+				F9BCC74A1EADA2E9B3AC739B9DB27FE5 /* Pods-Cirquet-app.debug.xcconfig */,
+				811D4984CEDE9CB0535735740AB1B220 /* Pods-Cirquet-app.release.xcconfig */,
+			);
+			name = "Pods-Cirquet-app";
+			path = "Target Support Files/Pods-Cirquet-app";
+			sourceTree = "<group>";
+		};
+		9B60B819B8C07013042B8236D3253664 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				F0EF820213EE9CA149ABFC3820B54E53 /* Analytics-Module.h */,
+				062D00A3E03AB8C09803378EC7B2C9DA /* Core.h */,
+				ED055B621D074BADAB5D3561A0A50C08 /* Core-Module.h */,
+				6348CC08E75295A320B287CF66474EAD /* SignIn-Module.h */,
+				D44F2F96699F575673B9447BFAEC1128 /* Frameworks */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		A0DE95B740D6371864B9681C5583AA7D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F862776623FEA34A72885CCCFDAC7EB7 /* GoogleUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A0E075E27FD6330E7D1EEC5A4A4BEA8E /* FirebaseInstanceID */ = {
+			isa = PBXGroup;
+			children = (
+				E2A9D3BF9F76EFD01B26F5EE0167ED30 /* FIRInstanceID.h */,
+				CE8C8220A5ADE3D84F2778449FA81C85 /* Frameworks */,
+			);
+			path = FirebaseInstanceID;
+			sourceTree = "<group>";
+		};
+		B35D7710D4699F6CEF762304FD833111 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1522039C5F11878F0697D9A795019206 /* GoogleSignIn.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C75736415436825DA5449F9A475F7546 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5ED4402C74BB1927D08A8725B1839FC8 /* GoogleAppUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE8C8220A5ADE3D84F2778449FA81C85 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				30E905B52F9EEF4F984F7E80EAEF2B8D /* FirebaseInstanceID.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D44F2F96699F575673B9447BFAEC1128 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7E965D311AEDB94045F7CFFCE8063395 /* GGLCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DECAC438BF0387C3994CBCA46E70E956 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F12975E81FFC4D6F91E57BFBC516F867 /* GGLSignIn.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EF8C1D7CB71FF1B6635F684900D09F19 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CD2D211BCE95DEBAEFB0D487853FF6A9 /* FirebaseAnalytics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F0983B8CC3A1AD3A117220FA59141DED /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0C373041BFE2C66FA3B5E6EE522E08DA /* FirebaseAnalytics */,
+				A0E075E27FD6330E7D1EEC5A4A4BEA8E /* FirebaseInstanceID */,
+				3EA3079E6454430940E0837D884F2CFB /* Google */,
+				2881B58E1766D1F4A5AEABE2A9A6488E /* GoogleAppUtilities */,
+				68D70207B1B559A54A719C4B7C2D65C6 /* GoogleAuthUtilities */,
+				5C22EDC206B35F772D9A449034737AC3 /* GoogleInterchangeUtilities */,
+				139D41C3479DE6B1F4AB012C2A9D9146 /* GoogleNetworkingUtilities */,
+				77FE80A10F6E17B8981966C4062359B5 /* GoogleSignIn */,
+				5B6BC1F6965E842455733073A04711EF /* GoogleSymbolUtilities */,
+				1EEB239B395A9732FC0766CE72A98879 /* GoogleUtilities */,
+				71C5131A3443207D647B76798BA1C70B /* Starscream */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F6E6E2AFFE2C7A5A49444D720C13629B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				20686D138E88D4A8691C697D5249E1B8 /* GoogleSymbolUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		A9A0B907C0365B1537597A1CA2F2E2A4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B87D388B67D0A4D539799BDC53BA943C /* Pods-Cirquet-app-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4CD06B2E1A8148C331FB937624C60F6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9652D2952012C4282A3ABD1C2C06351 /* Starscream-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1DA9AB8AE7F901A22A3771245DBA5756 /* Starscream */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E513C94BFA272E5FC14BFD7B29B61E3 /* Build configuration list for PBXNativeTarget "Starscream" */;
+			buildPhases = (
+				1BBACBD76E90615EC122312754B105EB /* Sources */,
+				AD074D8AF2C3BCB3F9849CF0D5EA6E99 /* Frameworks */,
+				E4CD06B2E1A8148C331FB937624C60F6 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Starscream;
+			productName = Starscream;
+			productReference = 819A01BF2CD208B3664EE99A491CDD37 /* Starscream.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CC7B2028BB0D35191049C92EE3BC751B /* Pods-Cirquet-app */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D413060F86A2EA8DE961D37FDC0C5DA5 /* Build configuration list for PBXNativeTarget "Pods-Cirquet-app" */;
+			buildPhases = (
+				89BD66742B5ABEB0B769798E0DBB6C63 /* Sources */,
+				E0476C2EA29D3A27643ED21824D71F2F /* Frameworks */,
+				A9A0B907C0365B1537597A1CA2F2E2A4 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E4436B1AAFC15AFAB6F289D478801B5C /* PBXTargetDependency */,
+			);
+			name = "Pods-Cirquet-app";
+			productName = "Pods-Cirquet-app";
+			productReference = 38199011B3FB606E17CD76FEF809E4E5 /* Pods_Cirquet_app.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 36AC70C19F96381B9333B9AAE57E9B84 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CC7B2028BB0D35191049C92EE3BC751B /* Pods-Cirquet-app */,
+				1DA9AB8AE7F901A22A3771245DBA5756 /* Starscream */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1BBACBD76E90615EC122312754B105EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				580A5E0620B0603B0D9D1E8C65DC4389 /* SSLSecurity.swift in Sources */,
+				DAC60EEE0F0AE433AC9D9FDEAABED2EB /* Starscream-dummy.m in Sources */,
+				1A6E4219AC28839EE52ECBFEA10D794F /* WebSocket.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89BD66742B5ABEB0B769798E0DBB6C63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E203D0DA6F70E39B1E3EB389CBD52098 /* Pods-Cirquet-app-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E4436B1AAFC15AFAB6F289D478801B5C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Starscream;
+			target = 1DA9AB8AE7F901A22A3771245DBA5756 /* Starscream */;
+			targetProxy = 4309A59AEE8BA9F65266926666A33CBC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		53CF2D29F6592EFF2F7A01F389E71115 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9BCC74A1EADA2E9B3AC739B9DB27FE5 /* Pods-Cirquet-app.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Cirquet-app/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Cirquet-app/Pods-Cirquet-app.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Cirquet_app;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C232BA316929D6020E1D17195DB2A442 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 811D4984CEDE9CB0535735740AB1B220 /* Pods-Cirquet-app.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Cirquet-app/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Cirquet-app/Pods-Cirquet-app.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Cirquet_app;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C9E4100CE1E327236281995343092C1D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7DAC898CAA25517CAB633192BAFD7844 /* Starscream.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Starscream/Starscream-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Starscream/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Starscream/Starscream.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Starscream;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CA6D9869910C09DF1B2F90FC43189C41 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7DAC898CAA25517CAB633192BAFD7844 /* Starscream.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Starscream/Starscream-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Starscream/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Starscream/Starscream.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Starscream;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D560687C2EAA7604298B56AEE78343D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F1CACC81189ECB1BB82CE47F73EBE3D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1E513C94BFA272E5FC14BFD7B29B61E3 /* Build configuration list for PBXNativeTarget "Starscream" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9E4100CE1E327236281995343092C1D /* Debug */,
+				CA6D9869910C09DF1B2F90FC43189C41 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1CACC81189ECB1BB82CE47F73EBE3D1 /* Debug */,
+				D560687C2EAA7604298B56AEE78343D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D413060F86A2EA8DE961D37FDC0C5DA5 /* Build configuration list for PBXNativeTarget "Pods-Cirquet-app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53CF2D29F6592EFF2F7A01F389E71115 /* Debug */,
+				C232BA316929D6020E1D17195DB2A442 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
