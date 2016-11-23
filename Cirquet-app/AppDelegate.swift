@@ -33,19 +33,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             let givenName = user.profile.givenName
             let familyName = user.profile.familyName
             let email = user.profile.email
-            //vc.myLabel.text = email!
+            let date: String = String(floor(Date().timeIntervalSince1970))
             
             let r = Just.post(
-                "http://128.238.64.105:8080/register",
-                data: ["fname": givenName!, "lname": familyName!, "email": email!, "age": 21, "host": "false", "googleid": idToken! ]
+                "https://www.cirquet.com/register",
+                data: ["fname": givenName!, "lname": familyName!, "email": email!, "age": 21, "host": "false", "googleid": idToken!, "date": date ]
             )
+            
             if(r.ok) {
                 ok = r.ok
                 print(r.text);
                 //vc.myText.text = r.text!
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyboard.instantiateViewController(withIdentifier: "chatviewcontroller")
-                window?.rootViewController?.present(vc, animated: true, completion: nil)
+                var vc2 = storyboard.instantiateViewController(withIdentifier: "chatviewcontroller")
+                window?.rootViewController?.present(vc2, animated: true, completion: nil)
             }
             else {
                 print (r.statusCode)

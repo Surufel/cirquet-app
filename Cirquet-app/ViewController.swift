@@ -23,7 +23,14 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
        
     }
     func signIn(signIn: GIDSignIn!, presentViewController viewController: UIViewController!) {
-        self.present(viewController, animated: true, completion: nil)
+        if !(GIDSignIn.sharedInstance().hasAuthInKeychain()) {
+            print("silently")
+            self.present(viewController, animated: true, completion: nil)
+        }
+        else {
+            print("loud")
+            GIDSignIn.sharedInstance().signInSilently();
+        }
     }
     func signIn(signIn: GIDSignIn!, dismissViewController viewController: UIViewController!) {
         self.dismiss(animated: true, completion: nil)

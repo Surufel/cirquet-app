@@ -9,4 +9,5 @@ target 'Cirquet-app' do
   pod 'Google/SignIn'
   pod 'Starscream', '~>2.0.0'
   pod 'Just'
+  pod 'JSQMessagesViewController'
 end
