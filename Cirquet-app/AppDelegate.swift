@@ -11,7 +11,6 @@ import Just
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     var window: UIWindow?
-    var ok: Bool = false
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -41,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             )
             
             if(r.ok) {
-                ok = r.ok
+                //ok = r.ok
                 print(r.text);
                 //vc.myText.text = r.text!
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
