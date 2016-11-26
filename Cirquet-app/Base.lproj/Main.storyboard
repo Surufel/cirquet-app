@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11761" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -38,6 +38,39 @@
             </objects>
             <point key="canvasLocation" x="135" y="138.38028169014083"/>
         </scene>
+        <!--QR View Controller Scene-->
+        <scene sceneID="SbG-yb-C4i">
+            <objects>
+                <viewController title="QR View Controller Scene" id="YdS-7o-vER" customClass="QRViewController" customModule="Cirquet_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="i6F-Rh-fmG"/>
+                        <viewControllerLayoutGuide type="bottom" id="wUT-zM-PYk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Wmg-RI-4M5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No QR Code is detected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wv1-au-n6u">
+                                <rect key="frame" x="0.0" y="518" width="320" height="50"/>
+                                <color key="backgroundColor" red="0.5" green="0.15406441028504764" blue="0.1490705786809956" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Wv1-au-n6u" firstAttribute="leading" secondItem="Wmg-RI-4M5" secondAttribute="leading" id="Bsp-mJ-pCK"/>
+                            <constraint firstItem="Wv1-au-n6u" firstAttribute="top" secondItem="i6F-Rh-fmG" secondAttribute="bottom" constant="498" id="hhZ-bT-nKo"/>
+                            <constraint firstAttribute="trailing" secondItem="Wv1-au-n6u" secondAttribute="trailing" id="jNr-Jt-CQ0"/>
+                            <constraint firstItem="Wv1-au-n6u" firstAttribute="bottom" secondItem="wUT-zM-PYk" secondAttribute="top" id="xK2-Ko-otl"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tec-ky-p0g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="934" y="138"/>
+        </scene>
         <!--Chat View Controller-->
         <scene sceneID="qCp-8O-Gig">
             <objects>
@@ -54,7 +87,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LbP-cu-6Mr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="937.5" y="137.32394366197184"/>
+            <point key="canvasLocation" x="1749" y="138"/>
         </scene>
     </scenes>
     <resources>

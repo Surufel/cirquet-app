@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		14AE29D347243D9CA39BD31E /* Pods_Cirquet_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71AD04310E4A8384D64EE3C0 /* Pods_Cirquet_app.framework */; };
+		2C5DA9C21DE9EB2000170CF1 /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5DA9C11DE9EB2000170CF1 /* QRViewController.swift */; };
 		4514DF931DD90C540053E2EF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4514DF921DD90C540053E2EF /* GoogleService-Info.plist */; };
 		45C77F9C1DD8FA7400395F5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C77F9B1DD8FA7400395F5D /* AppDelegate.swift */; };
 		45C77F9E1DD8FA7400395F5D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C77F9D1DD8FA7400395F5D /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		1C2A2D8854BA811DFD9FFCEC /* Pods-Cirquet-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cirquet-app.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cirquet-app/Pods-Cirquet-app.release.xcconfig"; sourceTree = "<group>"; };
+		2C5DA9C11DE9EB2000170CF1 /* QRViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
 		4282381420F729400C58D0DD /* Pods-Cirquet-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cirquet-app.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cirquet-app/Pods-Cirquet-app.debug.xcconfig"; sourceTree = "<group>"; };
 		4514DF921DD90C540053E2EF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4514DF951DD90D3E0053E2EF /* Cirquet-app-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cirquet-app-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 		45C77F9A1DD8FA7400395F5D /* Cirquet-app */ = {
 			isa = PBXGroup;
 			children = (
+				2C5DA9C11DE9EB2000170CF1 /* QRViewController.swift */,
 				45C77F9B1DD8FA7400395F5D /* AppDelegate.swift */,
 				45C77F9D1DD8FA7400395F5D /* ViewController.swift */,
 				45C77F9F1DD8FA7400395F5D /* Main.storyboard */,
@@ -133,7 +136,7 @@
 				TargetAttributes = {
 					45C77F971DD8FA7400395F5D = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 8G84VBBLHA;
+						DevelopmentTeam = 38875FGQ7F;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
@@ -227,6 +230,7 @@
 				45C77F9E1DD8FA7400395F5D /* ViewController.swift in Sources */,
 				45D0E46D1DDE22220012239E /* ChatViewController.swift in Sources */,
 				45C77F9C1DD8FA7400395F5D /* AppDelegate.swift in Sources */,
+				2C5DA9C21DE9EB2000170CF1 /* QRViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,7 +353,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 8G84VBBLHA;
+				DEVELOPMENT_TEAM = 38875FGQ7F;
 				INFOPLIST_FILE = "Cirquet-app/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kurtbitner.cirquet;
@@ -366,7 +370,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 8G84VBBLHA;
+				DEVELOPMENT_TEAM = 38875FGQ7F;
 				INFOPLIST_FILE = "Cirquet-app/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kurtbitner.cirquet;
