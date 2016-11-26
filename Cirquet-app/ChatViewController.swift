@@ -49,7 +49,8 @@ class ChatViewController: JSQMessagesViewController {
             }
         }
         cqueue.async {
-            while true {
+            while true && self.msg.count > 0{
+                
                 let r = Just.post("https://www.cirquet.com/get-message", data: ["time": floor((self.msg.last?.date.timeIntervalSince1970)!), "id": self.senderId, "cid":"abc1234snf"])
                 if r.ok {
                     let js = JSON(data: r.content!)
@@ -119,31 +120,21 @@ class ChatViewController: JSQMessagesViewController {
     }
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
         let r = Just.post("https://www.cirquet.com/message", data: ["msg": text, "date": String(floor(date.timeIntervalSince1970)), "id": senderId, "chat": "abc1234snf"])
-        if r.ok {
-            var mesg = JSQMessage(senderId: self.senderId, displayName: self.senderDisplayName, text: text)
-            //print(r.statusCode)
-            msg.append(mesg!)
+        if JSON(data: r.content!)["success"].bool! {
+              addMessage(withId: self.senderId, name: self.senderDisplayName, text: text)
             finishSendingMessage()
         }
         else {
             print(r.statusCode)
         }
     }
-//    private func observeMessages() {
-//        if msg.count > 0{
-//        let date = msg.last?.date
-//        let r = Just.post("http://0.0.0.0:8080/get-message", data: ["time": String(floor((date?.timeIntervalSince1970)!)),
-//                                                                    "gid": self.senderId,
-//                                                                    "cid": "abc1234snf"
-//                                                                    ])
-//        print(r.text)
-//        }
-//        else {
-//            let r = Just.get("http://0.0.0.0:8080/last5", data: ["cid": "abc1234snf"])
-//            print(r.statusCode)
-//            print(r.text)
-//        }
-//    }
+    override func didPressAccessoryButton(_ sender: UIButton!) {
+        print("not implemented yet")
+        let al = UIAlertController(title: "Sorry...", message: "Sending images will be available at a later time.", preferredStyle: .alert)
+        al.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(al, animated: true, completion: nil)
+    }
+
     
   
   
