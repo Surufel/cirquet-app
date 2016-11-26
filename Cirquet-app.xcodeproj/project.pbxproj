@@ -133,7 +133,7 @@
 				TargetAttributes = {
 					45C77F971DD8FA7400395F5D = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 8G84VBBLHA;
+						DevelopmentTeam = 38875FGQ7F;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
@@ -349,7 +349,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 8G84VBBLHA;
+				DEVELOPMENT_TEAM = 38875FGQ7F;
 				INFOPLIST_FILE = "Cirquet-app/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kurtbitner.cirquet;
@@ -366,7 +366,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 8G84VBBLHA;
+				DEVELOPMENT_TEAM = 38875FGQ7F;
 				INFOPLIST_FILE = "Cirquet-app/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kurtbitner.cirquet;
