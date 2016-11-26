@@ -62,7 +62,6 @@ class ChatViewController: JSQMessagesViewController {
                             }
                             self.addMessage(withId: js[i]["owner"].string!, name: "test", text: js[i]["contents"].string!)
                             self.finishReceivingMessage()
-                            self.reloadInputViews()
                         }
                     }
                 }
