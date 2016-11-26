@@ -9,6 +9,7 @@
 import UIKit
 import JSQMessagesViewController
 import Just
+import SwiftyJSON
 
 class ChatViewController: JSQMessagesViewController {
     var msg = [JSQMessage]()
@@ -17,7 +18,7 @@ class ChatViewController: JSQMessagesViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        var r = Just.post("http://0.0.0.0:8080/get-id", data: ["gid": GIDSignIn.sharedInstance().currentUser.authentication.idToken])
+        var r = Just.post("https://www.cirquet.com/get-id", data: ["gid": GIDSignIn.sharedInstance().currentUser.authentication.idToken])
         if r.ok {
             self.senderId = r.text
             print(self.senderId)
@@ -30,11 +31,41 @@ class ChatViewController: JSQMessagesViewController {
         let cqueue = DispatchQueue(label: "msgquery", attributes: .concurrent)
         cqueue.sync {
             if msg.count == 0 {
-                let r = Just.post("http://0.0.0.0:8080/last5", data: ["cid":"abc1234snf"])
+                let r = Just.post("https://www.cirquet.com/last5", data: ["cid":"abc1234snf"])
                 if r.ok {
+                    //let js =
                     print(r.text)
+                    let js = JSON(data: r.content!)
+                    if js.count == 0 {
+                        
+                    }
+                    else {
+                        for i in 0..<js.count {
+                            addMessage(withId: js[i]["owner"].string!, name: "test", text: js[i]["contents"].string!)
+                        }
+                        finishReceivingMessage()
+                    }
                 }
-                
+            }
+        }
+        cqueue.async {
+            while true {
+                let r = Just.post("https://www.cirquet.com/get-message", data: ["time": floor((self.msg.last?.date.timeIntervalSince1970)!), "id": self.senderId, "cid":"abc1234snf"])
+                if r.ok {
+                    let js = JSON(data: r.content!)
+                    if js.count == 0 {}
+                    else {
+                        for i in 0..<js.count {
+                            if js[i]["owner"].string! == self.senderId {
+                                print("discarding message")
+                                continue
+                            }
+                            self.addMessage(withId: js[i]["owner"].string!, name: "test", text: js[i]["contents"].string!)
+                            self.finishReceivingMessage()
+                            self.reloadInputViews()
+                        }
+                    }
+                }
             }
         }
     }
@@ -88,7 +119,7 @@ class ChatViewController: JSQMessagesViewController {
         return c
     }
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
-        let r = Just.post("http://0.0.0.0:8080/message", data: ["msg": text, "date": String(floor(date.timeIntervalSince1970)), "id": senderId, "chat": "abc1234snf"])
+        let r = Just.post("https://www.cirquet.com/message", data: ["msg": text, "date": String(floor(date.timeIntervalSince1970)), "id": senderId, "chat": "abc1234snf"])
         if r.ok {
             var mesg = JSQMessage(senderId: self.senderId, displayName: self.senderDisplayName, text: text)
             //print(r.statusCode)
@@ -99,21 +130,21 @@ class ChatViewController: JSQMessagesViewController {
             print(r.statusCode)
         }
     }
-    private func observeMessages() {
-        if msg.count > 0{
-        let date = msg.last?.date
-        let r = Just.post("http://0.0.0.0:8080/get-message", data: ["time": String(floor((date?.timeIntervalSince1970)!)),
-                                                                    "gid": self.senderId,
-                                                                    "cid": "abc1234snf"
-                                                                    ])
-        print(r.text)
-        }
-        else {
-            let r = Just.get("http://0.0.0.0:8080/last5", data: ["cid": "abc1234snf"])
-            print(r.statusCode)
-            print(r.text)
-        }
-    }
+//    private func observeMessages() {
+//        if msg.count > 0{
+//        let date = msg.last?.date
+//        let r = Just.post("http://0.0.0.0:8080/get-message", data: ["time": String(floor((date?.timeIntervalSince1970)!)),
+//                                                                    "gid": self.senderId,
+//                                                                    "cid": "abc1234snf"
+//                                                                    ])
+//        print(r.text)
+//        }
+//        else {
+//            let r = Just.get("http://0.0.0.0:8080/last5", data: ["cid": "abc1234snf"])
+//            print(r.statusCode)
+//            print(r.text)
+//        }
+//    }
     
   
   

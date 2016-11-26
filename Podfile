@@ -10,4 +10,5 @@ target 'Cirquet-app' do
   pod 'Starscream', '~>2.0.0'
   pod 'Just'
   pod 'JSQMessagesViewController'
+  pod 'SwiftyJSON'
 end

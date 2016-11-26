@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             let date: String = String(floor(Date().timeIntervalSince1970))
             
             let r = Just.post(
-                "http://0.0.0.0:8080/register",
+                "https://www.cirquet.com/register",
                 data: ["fname": givenName!, "lname": familyName!, "email": email!, "age": 21, "host": "false", "googleid": idToken!, "date": date ]
             )
             
