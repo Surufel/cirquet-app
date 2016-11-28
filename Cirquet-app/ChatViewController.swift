@@ -56,7 +56,7 @@ class ChatViewController: JSQMessagesViewController {
         cqueue.async {
             while true && self.msg.count > 0{
                 
-                let r = Just.post("https://www.cirquet.com/get-message", data: ["time": floor((self.msg.last?.date.timeIntervalSince1970)!), "id": self.senderId, "cid":"abc1234snf"])
+                let r = Just.post("https://www.cirquet.com/get-message", data: ["time": floor((self.msg.last?.date.timeIntervalSince1970)!), "id": self.senderId, "cid":self.chatid])
                 if r.ok {
                     let js = JSON(data: r.content!)
                     if js.count == 0 {}
