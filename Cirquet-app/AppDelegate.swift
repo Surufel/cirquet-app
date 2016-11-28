@@ -44,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                 print(r.text);
                 //vc.myText.text = r.text!
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                var vc2 = storyboard.instantiateViewController(withIdentifier: "chatviewcontroller")
+                var vc2 = storyboard.instantiateViewController(withIdentifier: "codeviewcontroller")
                 window?.rootViewController?.present(vc2, animated: true, completion: nil)
             }
             else {

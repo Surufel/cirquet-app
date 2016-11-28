@@ -11,18 +11,23 @@ import JSQMessagesViewController
 import Just
 import SwiftyJSON
 
+
 class ChatViewController: JSQMessagesViewController {
     var msg = [JSQMessage]()
     lazy var outgoingBubbleImageView: JSQMessagesBubbleImage = self.setupOutgoingBubble()
     lazy var incomingBubbleImageView: JSQMessagesBubbleImage = self.setupIncomingBubble()
+    
+    var chatid: String = ""
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(self.chatid + " hi")
         var r = Just.post("https://www.cirquet.com/get-id", data: ["gid": GIDSignIn.sharedInstance().currentUser.authentication.idToken])
         if r.ok {
             self.senderId = r.text
             print(self.senderId)
         }
+        
         self.senderDisplayName = GIDSignIn.sharedInstance().currentUser.profile.givenName
         collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
         collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
@@ -31,7 +36,7 @@ class ChatViewController: JSQMessagesViewController {
         let cqueue = DispatchQueue(label: "msgquery", attributes: .concurrent)
         cqueue.sync {
             if msg.count == 0 {
-                let r = Just.post("https://www.cirquet.com/last5", data: ["cid":"abc1234snf"])
+                let r = Just.post("https://www.cirquet.com/last5", data: ["cid":self.chatid])
                 if r.ok {
                     //let js =
                     print(r.text)
@@ -41,7 +46,7 @@ class ChatViewController: JSQMessagesViewController {
                     }
                     else {
                         for i in 0..<js.count {
-                            addMessage(withId: js[i]["owner"].string!, name: "test", text: js[i]["contents"].string!)
+                            addMessage(withId: js[i]["owner"].stringValue, name: "test", text: js[i]["contents"].stringValue)
                         }
                         finishReceivingMessage()
                     }
@@ -57,11 +62,11 @@ class ChatViewController: JSQMessagesViewController {
                     if js.count == 0 {}
                     else {
                         for i in 0..<js.count {
-                            if js[i]["owner"].string! == self.senderId {
+                            if js[i]["owner"].stringValue == self.senderId {
                                 print("discarding message")
                                 continue
                             }
-                            self.addMessage(withId: js[i]["owner"].string!, name: "test", text: js[i]["contents"].string!)
+                            self.addMessage(withId: js[i]["owner"].stringValue, name: "test", text: js[i]["contents"].stringValue)
                             self.finishReceivingMessage()
                         }
                     }
@@ -119,7 +124,7 @@ class ChatViewController: JSQMessagesViewController {
         return c
     }
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
-        let r = Just.post("https://www.cirquet.com/message", data: ["msg": text, "date": String(floor(date.timeIntervalSince1970)), "id": senderId, "chat": "abc1234snf"])
+        let r = Just.post("https://www.cirquet.com/message", data: ["msg": text, "date": String(floor(date.timeIntervalSince1970)), "id": senderId, "chat": self.chatid])
         if JSON(data: r.content!)["success"].bool! {
               addMessage(withId: self.senderId, name: self.senderDisplayName, text: text)
             finishSendingMessage()
@@ -134,8 +139,7 @@ class ChatViewController: JSQMessagesViewController {
         al.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(al, animated: true, completion: nil)
     }
-
-    
+   
   
   
 

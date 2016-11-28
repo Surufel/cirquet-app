@@ -38,10 +38,93 @@
             </objects>
             <point key="canvasLocation" x="135" y="138.38028169014083"/>
         </scene>
-        <!--Chat View Controller-->
+        <!--Code View Controller-->
+        <scene sceneID="yl8-nD-D7d">
+            <objects>
+                <viewController storyboardIdentifier="codeviewcontroller" id="UoS-bK-q7q" customClass="QRCodeViewController" customModule="Cirquet_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SvE-kW-iJE"/>
+                        <viewControllerLayoutGuide type="bottom" id="DLQ-bC-eWD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Zw1-Ge-WNK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cirquet-montserrat-light" translatesAutoresizingMaskIntoConstraints="NO" id="zfM-9Z-VV7">
+                                <rect key="frame" x="46" y="28" width="229" height="105"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sp3-Ab-pLs">
+                                <rect key="frame" x="127" y="473" width="67" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Scan now"/>
+                                <connections>
+                                    <action selector="scanNow:" destination="UoS-bK-q7q" eventType="touchUpInside" id="TR1-Nr-tsI"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beb-Xc-9af">
+                                <rect key="frame" x="18" y="168" width="284" height="82"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Thanks for joining!">
+                                        <attributes>
+                                            <font key="NSFont" size="24" name="SFUIText-Light"/>
+                                            <font key="NSOriginalFont" size="24" name="SFUIText-Light"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+DQ
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="17" name="SFUIText-Light"/>
+                                            <font key="NSOriginalFont" size="17" name="SFUIText-Light"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+DQ
+</string>
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="17"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Scan QR code now to begin">
+                                        <attributes>
+                                            <font key="NSFont" size="17" name="SFUIText-Light"/>
+                                            <font key="NSOriginalFont" size="17" name="SFUIText-Light"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+DQ
+</string>
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="lwE-PO-0p1" kind="show" identifier="SendToChat" id="LUF-PI-Dh8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eBy-hf-hfv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="881.25" y="136.26760563380282"/>
+        </scene>
+        <!--Chat Container View Controller-->
         <scene sceneID="qCp-8O-Gig">
             <objects>
-                <viewController storyboardIdentifier="chatviewcontroller" id="lwE-PO-0p1" customClass="ChatViewController" customModule="Cirquet_app" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="chatviewcontroller" id="lwE-PO-0p1" customClass="ChatContainerViewController" customModule="Cirquet_app" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Odp-FD-Krj"/>
                         <viewControllerLayoutGuide type="bottom" id="R31-B5-kAV"/>
@@ -49,12 +132,50 @@
                     <view key="view" contentMode="scaleToFill" id="OgA-ho-NY3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="up6-Dh-T3G">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="AAh-Tr-DyA"/>
+                                </items>
+                            </navigationBar>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oXM-kR-nOE">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="iGy-o0-Vkj" kind="embed" id="a6R-4f-uey"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="bar" destination="up6-Dh-T3G" id="am6-cj-mf0"/>
+                        <outlet property="chatView" destination="oXM-kR-nOE" id="BWb-fa-eEH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LbP-cu-6Mr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="937.5" y="137.32394366197184"/>
+            <point key="canvasLocation" x="1680" y="138"/>
+        </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="cue-AA-bEh">
+            <objects>
+                <viewController id="iGy-o0-Vkj" customClass="ChatViewController" customModule="Cirquet_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QUk-4A-71y"/>
+                        <viewControllerLayoutGuide type="bottom" id="EIc-63-KAF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jzd-Qa-i4K">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AW1-zU-BVq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1680" y="840"/>
         </scene>
     </scenes>
     <resources>

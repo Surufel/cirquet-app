@@ -11,4 +11,6 @@ target 'Cirquet-app' do
   pod 'Just'
   pod 'JSQMessagesViewController'
   pod 'SwiftyJSON'
+  pod 'QRCodeReader.swift', '~> 7.2.0'
+  
 end
