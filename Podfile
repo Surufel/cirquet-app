@@ -7,7 +7,6 @@ target 'Cirquet-app' do
 
   # Pods for Cirquet-app
   pod 'Google/SignIn'
-  pod 'Starscream', '~>2.0.0'
   pod 'Just'
   pod 'JSQMessagesViewController'
   pod 'SwiftyJSON'
