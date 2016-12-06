@@ -40,6 +40,9 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func unwindToBeginning(segue: UIStoryboardSegue) {
+        
+    }
     
     
 

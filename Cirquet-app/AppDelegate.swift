@@ -41,12 +41,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             if(login.ok) {
                 var js = JSON(data: login.content!)
                 print(js)
+                var id: String = js["sender_id"].stringValue
                 if js["exists"].boolValue {
                     if !js["is_host"].boolValue {
                         //vc.myText.text = r.text!
                         let storyboard = UIStoryboard(name: "Main", bundle: nil)
                         var vc2 = storyboard.instantiateViewController(withIdentifier: "codeviewcontroller")
                         window?.rootViewController?.present(vc2, animated: true, completion: nil)
+                    }
+                    else {
+                        print("else")
+                        var res2 = Just.post("https://www.cirquet.com/get-chat-id", data: ["id": id])
+                        print(res2.statusCode)
+                        var js3 = JSON(data: res2.content!)
+                        if js3["success"].boolValue {
+                            let storyboard1 = UIStoryboard(name: "Main", bundle: nil)
+                            let vc123 = storyboard1.instantiateViewController(withIdentifier: "generateqrcontroller")
+                            (vc123 as? GenerateQRViewController)?.chatid = js3["chatid"].stringValue
+                            (vc123 as? GenerateQRViewController)?.chatname = js3["chatname"].stringValue
+                            window?.rootViewController?.present(vc123, animated: true, completion: nil)
+                        }
                     }
                     
                     

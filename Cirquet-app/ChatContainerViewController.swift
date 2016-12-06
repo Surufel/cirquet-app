@@ -34,6 +34,10 @@ class ChatContainerViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBAction func didPressLogout(_ sender: Any) {
+        GIDSignIn.sharedInstance().disconnect()
+        self.performSegue(withIdentifier: "beginning2", sender: self)
+    }
     
 
     /*

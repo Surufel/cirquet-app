@@ -11,9 +11,10 @@ import Just
 import AssetsLibrary
 
 class GenerateQRViewController: UIViewController {
+    // MARK: Properties
     var chatname: String = ""
     var chatid: String = ""
-    
+    // MARK: UI Objects
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var qrCode: UIImageView!
     
@@ -32,6 +33,8 @@ class GenerateQRViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: Save photo to library
     @IBAction func savePhoto(_ sender: UIButton) {
         var img = self.qrCode.image!
         UIImageWriteToSavedPhotosAlbum(img, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
@@ -50,17 +53,15 @@ class GenerateQRViewController: UIViewController {
             
         }
     }
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func signOut(_ sender: UIButton) {
+        GIDSignIn.sharedInstance().disconnect()
+        self.performSegue(withIdentifier: "beginning", sender: self)     
     }
-    */
+    
+    
+    
+   
+    
 
+  
 }
