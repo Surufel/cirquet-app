@@ -44,15 +44,17 @@ class NewUserViewController: UIViewController, UITextFieldDelegate {
     @IBAction func signUpAsUser(_ sender: UIButton) {
         self.hostButton.isEnabled = false
         
-        if ageField.text == "" || ageField.text == nil{
+        guard !(self.ageField.text?.isEmpty)! else {
             let al = UIAlertController(title: "Missing Input", message: "Please enter an age to continue.", preferredStyle: UIAlertControllerStyle.alert)
             al.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(al, animated: true, completion: nil)
+            return
         }
-        else if Int(ageField.text!)! < 13 {
+        guard Int(ageField.text!)! < 13  else {
             let al = UIAlertController(title: "Invalid input", message: "You must be 13 or older to use this app.", preferredStyle: UIAlertControllerStyle.alert)
             al.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(al, animated: true, completion: nil)
+            return
         }
         self.age = Int(ageField.text!)!
         let reg = Just.post("https://www.cirquet.com/register", data: ["fname": givenName, "lname": familyName, "email": email, "age": age, "host": isHost, "googleid": idToken, "date": date ])
@@ -69,15 +71,17 @@ class NewUserViewController: UIViewController, UITextFieldDelegate {
     @IBAction func signUpAsHost(_ sender: UIButton) {
 
         self.isHost = true
-        if ageField.text == "" || ageField.text == nil{
+        guard !(self.ageField.text?.isEmpty)! else {
             let al = UIAlertController(title: "Missing Input", message: "Please enter an age to continue.", preferredStyle: UIAlertControllerStyle.alert)
             al.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(al, animated: true, completion: nil)
+            return
         }
-        else if Int(ageField.text!)! < 13 {
+        guard Int(ageField.text!)! < 13  else {
             let al = UIAlertController(title: "Invalid input", message: "You must be 13 or older to use this app.", preferredStyle: UIAlertControllerStyle.alert)
             al.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(al, animated: true, completion: nil)
+            return
         }
         self.userButton.isEnabled = false
         self.age = Int(ageField.text!)!
