@@ -8,6 +8,8 @@
 
 import UIKit
 import Just
+import SwiftyJSON
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     var window: UIWindow?
@@ -32,24 +34,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             let givenName = user.profile.givenName
             let familyName = user.profile.familyName
             let email = user.profile.email
-            let date: String = String(floor(Date().timeIntervalSince1970))
+            let date: Double = floor(Date().timeIntervalSince1970)
+            let login = Just.post("https://www.cirquet.com/login", data: ["googleid": idToken!])
             
-            let r = Just.post(
-                "https://www.cirquet.com/register",
-                data: ["fname": givenName!, "lname": familyName!, "email": email!, "age": 21, "host": "false", "googleid": idToken!, "date": date ]
-            )
             
-            if(r.ok) {
-                //ok = r.ok
-                print(r.text);
-                //vc.myText.text = r.text!
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                var vc2 = storyboard.instantiateViewController(withIdentifier: "codeviewcontroller")
-                window?.rootViewController?.present(vc2, animated: true, completion: nil)
+            if(login.ok) {
+                var js = JSON(data: login.content!)
+                print(js)
+                if js["exists"].boolValue {
+                    if !js["is_host"].boolValue {
+                        //vc.myText.text = r.text!
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        var vc2 = storyboard.instantiateViewController(withIdentifier: "codeviewcontroller")
+                        window?.rootViewController?.present(vc2, animated: true, completion: nil)
+                    }
+                    
+                    
+                }
+                else {
+                    let storyboard2 = UIStoryboard(name: "Main", bundle: nil)
+                    var vc3 = storyboard2.instantiateViewController(withIdentifier: "newuserviewcontroller")
+                    window?.rootViewController?.present(vc3, animated: true, completion: nil)
+                }
             }
-            else {
-                print (r.statusCode)
-            }
+            
             
             
         }

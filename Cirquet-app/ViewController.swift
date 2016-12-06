@@ -16,6 +16,9 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
        
         super.viewDidLoad()
         GIDSignIn.sharedInstance().uiDelegate = self
+        if GIDSignIn.sharedInstance().hasAuthInKeychain() {
+            GIDSignIn.sharedInstance().signInSilently()
+        }
         //GIDSignIn.sharedInstance().signInSilently()
         
         //self.myText.text = "Label"
@@ -23,14 +26,10 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
        
     }
     func signIn(signIn: GIDSignIn!, presentViewController viewController: UIViewController!) {
-        if !(GIDSignIn.sharedInstance().hasAuthInKeychain()) {
-            print("silently")
-            self.present(viewController, animated: true, completion: nil)
-        }
-        else {
-            print("loud")
-            GIDSignIn.sharedInstance().signInSilently();
-        }
+        
+        self.present(viewController, animated: true, completion: nil)
+        
+       
     }
     func signIn(signIn: GIDSignIn!, dismissViewController viewController: UIViewController!) {
         self.dismiss(animated: true, completion: nil)

@@ -17,6 +17,7 @@ class QRCodeViewController: UIViewController, QRCodeReaderViewControllerDelegate
     })
     var chatid: String = ""
     var chatname: String = ""
+    var userid: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -71,6 +72,7 @@ class QRCodeViewController: UIViewController, QRCodeReaderViewControllerDelegate
             if let dest = segue.destination as? ChatContainerViewController {
                 dest.chatid = self.chatid
                 dest.chatTitle = self.chatname
+                
             }
         }
     }
