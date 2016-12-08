@@ -14,6 +14,7 @@ class ChatContainerViewController: UIViewController {
     var chatTitle: String = ""
     var chatid: String = ""
     var userid: String = ""
+    var sendername: String = ""
     //var seg: String = ""
     @IBOutlet weak var bar: UINavigationBar!
     @IBOutlet weak var chatView: UIView!
@@ -26,6 +27,7 @@ class ChatContainerViewController: UIViewController {
         
         (self.childViewControllers.last as? ChatViewController)?.chatid = self.chatid
         (self.childViewControllers.last as? ChatViewController)?.senderId = self.userid
+        (self.childViewControllers.last as? ChatViewController)?.senderDisplayName = self.sendername
         print(((self.childViewControllers.last as? ChatViewController)?.chatid)!)
         // Do any additional setup after loading the view.
     }

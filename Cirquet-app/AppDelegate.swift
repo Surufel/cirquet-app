@@ -47,6 +47,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                         //vc.myText.text = r.text!
                         let storyboard = UIStoryboard(name: "Main", bundle: nil)
                         var vc2 = storyboard.instantiateViewController(withIdentifier: "codeviewcontroller")
+                        (vc2 as? QRCodeViewController)?.userid = js["sender_id"].stringValue
+                        (vc2 as? QRCodeViewController)?.sendername = givenName!
                         window?.rootViewController?.present(vc2, animated: true, completion: nil)
                     }
                     else {

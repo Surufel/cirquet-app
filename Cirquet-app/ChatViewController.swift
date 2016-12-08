@@ -22,11 +22,11 @@ class ChatViewController: JSQMessagesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print(self.chatid + " hi")
-        var r = Just.post("https://www.cirquet.com/get-id", data: ["gid": GIDSignIn.sharedInstance().currentUser.authentication.idToken])
-        if r.ok {
-            self.senderId = r.text
-            print(self.senderId)
-        }
+//        var r = Just.post("https://www.cirquet.com/get-id", data: ["gid": GIDSignIn.sharedInstance().currentUser.authentication.idToken])
+//        if r.ok {
+//            self.senderId = r.text
+//            print(self.senderId)
+//        }
         
         self.senderDisplayName = GIDSignIn.sharedInstance().currentUser.profile.givenName
         collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
@@ -54,7 +54,7 @@ class ChatViewController: JSQMessagesViewController {
             }
         }
         cqueue.async {
-            while true && self.msg.count > 0{
+            while true && self.msg.count > 0 {
                 
                 let r = Just.post("https://www.cirquet.com/get-message", data: ["time": floor((self.msg.last?.date.timeIntervalSince1970)!), "id": self.senderId, "cid":self.chatid])
                 if r.ok {
@@ -66,7 +66,7 @@ class ChatViewController: JSQMessagesViewController {
                                 print("discarding message")
                                 continue
                             }
-                            self.addMessage(withId: js[i]["owner"].stringValue, name: "test", text: js[i]["contents"].stringValue)
+                            self.addMessage(withId: js[i]["owner"].stringValue, name: js[i]["name"].stringValue, text: js[i]["contents"].stringValue)
                             self.finishReceivingMessage()
                         }
                     }
@@ -124,7 +124,7 @@ class ChatViewController: JSQMessagesViewController {
         return c
     }
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
-        let r = Just.post("https://www.cirquet.com/message", data: ["msg": text, "date": String(floor(date.timeIntervalSince1970)), "id": senderId, "chat": self.chatid])
+        let r = Just.post("https://www.cirquet.com/message", data: ["msg": text, "date": String(floor(date.timeIntervalSince1970)), "id": senderId, "name": self.senderDisplayName, "chat": self.chatid])
         if JSON(data: r.content!)["success"].bool! {
               addMessage(withId: self.senderId, name: self.senderDisplayName, text: text)
             finishSendingMessage()
@@ -139,9 +139,16 @@ class ChatViewController: JSQMessagesViewController {
         al.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(al, animated: true, completion: nil)
     }
-   
-  
-  
+    override func collectionView(_ collectionView: JSQMessagesCollectionView!, attributedTextForMessageBubbleTopLabelAt indexPath: IndexPath!) -> NSAttributedString! {
+        let mesg = msg[indexPath.item]
+        guard mesg.senderId != self.senderId else {
+            return NSAttributedString(string: "Me")
+        }
+        return NSAttributedString(string: mesg.senderDisplayName)
+    }
+    override func collectionView(_ collectionView: JSQMessagesCollectionView!, layout collectionViewLayout: JSQMessagesCollectionViewFlowLayout!, heightForMessageBubbleTopLabelAt indexPath: IndexPath!) -> CGFloat {
+        return 20
+    }
 
 
     

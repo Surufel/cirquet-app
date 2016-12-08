@@ -21,11 +21,11 @@ class VenueViewController: UIViewController {
     @IBOutlet weak var city: UITextField!
     @IBOutlet weak var state: UITextField!
     @IBOutlet weak var zip: UITextField!
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+//
     }
 
     override func didReceiveMemoryWarning() {
@@ -90,7 +90,6 @@ class VenueViewController: UIViewController {
         }
         
     }
- 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "generateQR" {
             if let dest = segue.destination as? GenerateQRViewController {

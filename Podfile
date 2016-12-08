@@ -11,5 +11,6 @@ target 'Cirquet-app' do
   pod 'JSQMessagesViewController'
   pod 'SwiftyJSON'
   pod 'QRCodeReader.swift', '~> 7.2.0'
+  pod 'TPKeyboardAvoiding', '~> 1.3'
   
 end

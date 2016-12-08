@@ -50,7 +50,7 @@ class NewUserViewController: UIViewController, UITextFieldDelegate {
             self.present(al, animated: true, completion: nil)
             return
         }
-        guard Int(ageField.text!)! < 13  else {
+        guard Int(ageField.text!)! > 13  else {
             let al = UIAlertController(title: "Invalid input", message: "You must be 13 or older to use this app.", preferredStyle: UIAlertControllerStyle.alert)
             al.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(al, animated: true, completion: nil)
@@ -77,7 +77,7 @@ class NewUserViewController: UIViewController, UITextFieldDelegate {
             self.present(al, animated: true, completion: nil)
             return
         }
-        guard Int(ageField.text!)! < 13  else {
+        guard Int(ageField.text!)! > 13  else {
             let al = UIAlertController(title: "Invalid input", message: "You must be 13 or older to use this app.", preferredStyle: UIAlertControllerStyle.alert)
             al.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(al, animated: true, completion: nil)
@@ -109,6 +109,7 @@ class NewUserViewController: UIViewController, UITextFieldDelegate {
         if segue.identifier == "QRCode" {
             if let dest = segue.destination as? QRCodeViewController {
                 dest.userid = self.userid
+                dest.sendername = self.givenName
             }
         }
         else if segue.identifier == "SetUpVenue" {
