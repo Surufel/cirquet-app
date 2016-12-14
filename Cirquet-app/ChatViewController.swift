@@ -33,47 +33,9 @@ class ChatViewController: JSQMessagesViewController {
         collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
         
         //observeMessages()
-        let cqueue = DispatchQueue(label: "msgquery", attributes: .concurrent)
-        cqueue.sync {
-            if msg.count == 0 {
-                let r = Just.post("https://www.cirquet.com/last5", data: ["cid":self.chatid])
-                if r.ok {
-                    //let js =
-                    print(r.text)
-                    let js = JSON(data: r.content!)
-                    if js.count == 0 {
-                        
-                    }
-                    else {
-                        for i in 0..<js.count {
-                            addMessage(withId: js[i]["owner"].stringValue, name: "test", text: js[i]["contents"].stringValue)
-                        }
-                        finishReceivingMessage()
-                    }
-                }
-            }
-        }
-        cqueue.async {
-            while true && self.msg.count > 0 {
-                
-                let r = Just.post("https://www.cirquet.com/get-message", data: ["time": floor((self.msg.last?.date.timeIntervalSince1970)!), "id": self.senderId, "cid":self.chatid])
-                if r.ok {
-                    let js = JSON(data: r.content!)
-                    if js.count == 0 {}
-                    else {
-                        for i in 0..<js.count {
-                            if js[i]["owner"].stringValue == self.senderId {
-                                print("discarding message")
-                                continue
-                            }
-                            self.addMessage(withId: js[i]["owner"].stringValue, name: js[i]["name"].stringValue, text: js[i]["contents"].stringValue)
-                            self.finishReceivingMessage()
-                        }
-                    }
-                }
-            }
-        }
     }
+    
+   
     
 
     override func didReceiveMemoryWarning() {
@@ -149,7 +111,50 @@ class ChatViewController: JSQMessagesViewController {
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, layout collectionViewLayout: JSQMessagesCollectionViewFlowLayout!, heightForMessageBubbleTopLabelAt indexPath: IndexPath!) -> CGFloat {
         return 20
     }
+    func observeMessages() {
+        let cqueue = DispatchQueue(label: "msgquery", attributes: .concurrent)
+        cqueue.sync {
+            if msg.count == 0 {
+                print ("last5 for \(self.chatid)")
+                let r = Just.post("https://www.cirquet.com/last5", data: ["cid":self.chatid])
+                if r.ok {
+                    //let js =
+                    print(r.text)
+                    let js = JSON(data: r.content!)
+                    if js.count == 0 {
+                        
+                    }
+                    else {
+                        for i in 0..<js.count {
+                            addMessage(withId: js[i]["owner"].stringValue, name: js[i]["name"].stringValue, text: js[i]["contents"].stringValue)
+                        }
+                        finishReceivingMessage()
+                    }
+                }
+            }
+        }
+        cqueue.async {
+            while true && self.msg.count > 0 {
+                
+                let r = Just.post("https://www.cirquet.com/get-message", data: ["time": floor((self.msg.last?.date.timeIntervalSince1970)!), "id": self.senderId, "cid":self.chatid])
+                if r.ok {
+                    let js = JSON(data: r.content!)
+                    if js.count == 0 {}
+                    else {
+                        for i in 0..<js.count {
+                            if js[i]["owner"].stringValue == self.senderId {
+                                print("discarding message")
+                                continue
+                            }
+                            self.addMessage(withId: js[i]["owner"].stringValue, name: js[i]["name"].stringValue, text: js[i]["contents"].stringValue)
+                            self.finishReceivingMessage()
+                        }
+                    }
+                }
+            }
+        }
 
+    }
 
     
    

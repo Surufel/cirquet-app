@@ -28,6 +28,7 @@ class ChatContainerViewController: UIViewController {
         (self.childViewControllers.last as? ChatViewController)?.chatid = self.chatid
         (self.childViewControllers.last as? ChatViewController)?.senderId = self.userid
         (self.childViewControllers.last as? ChatViewController)?.senderDisplayName = self.sendername
+        (self.childViewControllers.last as? ChatViewController)?.observeMessages()
         print(((self.childViewControllers.last as? ChatViewController)?.chatid)!)
         // Do any additional setup after loading the view.
     }
